@@ -5,13 +5,9 @@ class TinderBot(): # creation of tinder bot
         def __init__(self):
             #self.msg = webdriver.Chrome()
             self.driver = webdriver.Chrome()
-    
 
-        #def scrt_code(self):
-            #self.msg = webdriver.Chrome()
-            
-            
-            
+                #def scrt_code(self):
+                #self.msg = webdriver.Chrome()
 
         def login(self):
             self.driver.get('https://tinder.com/') # goes to tinder dot com
@@ -26,7 +22,7 @@ class TinderBot(): # creation of tinder bot
             #switch to google login
             base_window = self.driver.window_handles[0] # base window
 
-            popup = self.driver.switch_to_window(bot.driver.window_handles[1]) # login window
+            popup = self.driver.switch_to_window(self.driver.window_handles[1]) # login window
 
             email_in= self.driver.find_element_by_xpath('//*[@id="identifierId"]')
             email_in.send_keys('RJamesTBot@gmail.com')
@@ -39,6 +35,9 @@ class TinderBot(): # creation of tinder bot
 
             nxt_pw =self.driver.find_element_by_xpath('//*[@id="passwordNext"]')
             nxt_pw.click() 
+            
+            tLikeButton = self.driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/div[4]/button')
+            tLikeButton.click()
 
             #phn_in = bot.driver.find_element_by_xpath('//*[@id="phoneNumberId"]')
            # phn_in.send_keys('5713558188')
